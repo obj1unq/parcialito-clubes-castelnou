@@ -1,0 +1,30 @@
+import Clubes.*
+
+test "Es estrella y juega en club Profecional" {
+	
+	assert.that(true)
+
+}
+test "Es estrella y juega en club Comunitario" {
+    var c1 = new ClubComunitario( valorPaseEstrella = 1000);
+	var j1 = new Jugador(club = c1, antiguedad = 2, valorDelPase = 200, cantidadDePartidos = 4);
+	var a1 = new ActividadSocial();
+	var a2 = new ActividadSocial();
+	var a3 = new ActividadSocial();
+	a1.nuevoSocio(j1)
+	a2.nuevoSocio(j1)
+	a3.nuevoSocio(j1)
+	c1.setSocio(j1);
+	var e1 = new Equipo(capitan = j1)
+	e1.agregaJugador(j1)
+	c1.setEquipo(e1)
+	c1.setActividad(a1);
+	c1.setActividad(a2);
+	c1.setActividad(a3);
+	assert.that(c1.esSocioEstrella(j1))
+}
+test "Es estrella y juega en club tradicional" {
+
+	assert.that(true)
+
+}
